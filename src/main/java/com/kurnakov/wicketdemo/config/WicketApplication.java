@@ -11,4 +11,10 @@ public class WicketApplication extends WebApplication {
         return HomePage.class;
     }
 
+    @Override
+    public void init()
+    {
+        getResourceSettings().getResourceFinders().add(
+                new WebApplicationPath(getServletContext(), "com/kurnakov/wicketdemo/page/"));
+    }
 }
